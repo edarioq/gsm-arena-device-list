@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "prepare": "husky install",
-    "postinstall": "npx husky-init && node -e \"require('fs').writeFileSync('.husky/pre-commit', 'npx lint-staged\\n')\""
+    "postinstall": "npx husky-init && node -e \"require('fs').writeFileSync('.husky/pre-commit', 'npx lint-staged\\n')\"",
+    "prettier": "npx prettier. --write"
   },
   "author": "",
   "license": "ISC",
