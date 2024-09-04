@@ -25,7 +25,7 @@ const processKeyAndUpdateFile = async (key, deviceObj) => {
           if (spec.title === 'Misc' && spec.data) {
             for (const misc of spec.data) {
               if (misc.title === 'Models' && Array.isArray(misc.data)) {
-                models = misc.data; // Extract models if found
+                models = misc.data.flatMap(model => model.split(',').map(m => m.trim())); // Extract and format models
                 break;
               }
             }
@@ -39,13 +39,13 @@ const processKeyAndUpdateFile = async (key, deviceObj) => {
       console.log(`No models found for key: ${key}.`);
     }
 
-    // Add the models (empty array if none were found) to the deviceObj and save the file in real-time
+    // Add the models to the deviceObj as a comma-separated list
     deviceObj.models = models;
 
     // Save the updated devices.json file
     await saveDevicesFile();
     console.log(
-      `Updated device ${key} with: ${models.length ? models : 'N/A'}`,
+      `Updated device ${key} with: ${models.length ? models.join(', ') : 'N/A'}`,
     );
   } catch (error) {
     console.error(`Error processing ${key}:`, error);
