@@ -8,10 +8,10 @@ module.exports = {
     DEVICE_LIST: '?route=device-list',
   },
   DIRECTORIES: {
-    DATA: path.join(__dirname, 'data'),
-    IMAGES: path.join(__dirname, 'data', 'images'),
+    DATA: path.join(__dirname, 'new'),
+    IMAGES: path.join(__dirname, 'new', 'images'),
   },
   FILES: {
-    DEVICES_JSON: path.join(__dirname, 'data', 'devices.json'),
+    DEVICES_JSON: path.join(__dirname, 'new', 'devices.json'),
   },
 };
