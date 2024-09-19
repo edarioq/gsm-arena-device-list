@@ -31,7 +31,7 @@ Run `npm install`
 
 Start up the app by running `node <FILE>`. Where file is the name of the file you want to run. Keep an eye on the terminal for output.
 
-1. `devices.js` creates the initial file with all the device information.
-2. `models.js` takes this file and modifies it by adding new properties, such as `models`, which is a list of all models available for that device. This could process takes a very long time as it's getting info for each and every device.
-3. `images.js` takes the same file and downloads the images from the links present in the property `device_image`. Again, this process takes a while to complete.
-4. `prepare.js` cleans the `devices.json` file to be used in a production environment. Modify this file as needed or create your own.
+1. `node devices` creates the initial file with all the device information.
+2. `node models` takes this file and modifies it by adding new properties, such as `models`, which is a list of all models available for that device. This process takes a very long time as it's making a request for each and every device.
+3. `node images` takes the same file and downloads the images from the links present in the property `device_image`. Again, this process takes a while to complete.
+4. `node prepare` cleans the `devices.json` file to be used in a production environment. Modify this file as needed or create your own.
